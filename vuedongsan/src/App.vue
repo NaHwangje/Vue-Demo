@@ -1,12 +1,17 @@
 <template>
-  <div class="menu">
-    <a v-for="a in menu" :key="a"> {{ a }} </a>
-  </div>
+  <div>
+    <div class="menu">
+      <a v-for="a in menu" :key="a"> {{ a }} </a>
+    </div>
 
-  <div v-for="b in products" :key="b">
-    <img src="https://i.namu.wiki/i/MdIcQe5C3YFThD4FzDu9zoYYdRE4SpcGfb9cagDWVzn-a3cPR9TdMf1rF9Rk9zLDCZRZWD8ZIRKLi8c74CeLRPvaQNChqnrFtJ3uejTG5CvdHWX45xlEbgjQfGcC4VRgonFgHbRISx2bKOQiDjwang.webp" class="room-img">
-    <h4>{{ b }}</h4>
-    <p>100 만원</p>
+    <div v-for="b in products" :key="b">
+      <img
+        src="https://i.namu.wiki/i/MdIcQe5C3YFThD4FzDu9zoYYdRE4SpcGfb9cagDWVzn-a3cPR9TdMf1rF9Rk9zLDCZRZWD8ZIRKLi8c74CeLRPvaQNChqnrFtJ3uejTG5CvdHWX45xlEbgjQfGcC4VRgonFgHbRISx2bKOQiDjwang.webp"
+        class="room-img"
+      />
+      <h4>{{ b }}</h4>
+      <p>100 만원</p>
+    </div>
   </div>
 </template>
  
@@ -25,7 +30,7 @@ export default {
 </script>
 
 <style>
-.room-img{
+.room-img {
   width: 70%;
   margin-top: 15px;
 }
