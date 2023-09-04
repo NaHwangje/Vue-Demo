@@ -1,21 +1,4 @@
 # Vue-Demo
 
-## **VUE 설치와 세팅**
-
-1. **설치**  
-   1.1. [node.js] 최신 LTS 버전으로 다운  
-   1.2. [터미널] `npm install -g @vue/cli`
-
-2. **Extensions**  
-   2.1. [Vetur]  
-   2.2. [hTML CSS Support]  
-   2.3. [Vue 3 Snippets]  
-
-3. **프로젝트 생성**  
-   3.1. [터미널] `vue create 프로젝트명`  
-   3.2. [버전 선택] 2는 곧 서비스 종료, 3 선택  
-   3.3. [메인 코드] `src/App.vue`  
-      - html >> template
-      - css >> style
-      - JavaScript >> script  
-   3.4. [미리보기] `npm run serve`  
+1. [VUE 설치와 세팅](./CONTENTS/1.%20설치와%20세팅.md)
+2. [데이터바인딩]
