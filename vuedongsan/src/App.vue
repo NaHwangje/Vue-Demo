@@ -37,11 +37,11 @@ export default {
 
 .menu{
   background: darkslateblue;
-  padding: auto;
+  padding: 15px;
   border-radius: 5px;
 }
 .menu a {
   color: white;
-  padding: auto;
+  padding: 15px;
 }
 </style>
