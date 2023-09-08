@@ -1,9 +1,9 @@
 <template>
   <div>
-    <div class="black-bg">
+    <div class="black-bg" v-if="모달창열렸니 == true">
       <div class="white-bg">
         <h4>
-          상세 페이지
+          상세 페이지 <span><button @click="모달창열렸니=false">x</button></span>
         </h4>
         <p>상세 페이지 내용임</p>
       </div>
