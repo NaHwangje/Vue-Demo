@@ -24,13 +24,13 @@
 
 
 <script>
-import oneroomsData from './assets/oneroom'
+import oneroomsdata from './assets/oneroom'
 
 export default {
   name: "App",
   data() {
     return {
-     onerooms: oneroomsData,
+     onerooms: oneroomsdata,
       모달창열렸니: false,
       menu: ["Home", "Shop", "About"],
     };
