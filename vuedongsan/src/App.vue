@@ -1,8 +1,8 @@
 <template>
   <div>
     <!-- <div class="black-bg" v-if="모달창열렸니 == true">
-      <div class="white-bg">
-        <h4>상세 페이지</h4>
+      <div class="white-bg" v-for="(n,i) in onerooms ":key="n">
+        <h4>{{ onerooms[1] }}</h4>
         <p>상세 페이지 내용임</p>
         <button @click="모달창열렸니 = false">x</button>
       </div>
