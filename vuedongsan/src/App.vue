@@ -14,7 +14,7 @@
 
     <div v-for="(b, i) in products" :key="b">
       <img :src="imageUrls[i]" class="room-img" />
-      <h4>{{ products[i] }}</h4>
+      <h4 @click="모달창열렸니 = true">{{ products[i] }}</h4>
       <p>{{ price[i] }} 만원</p>
       <button @click="신고수[i]++">허위매물 신고</button>
       <span>신고 수 : {{ 신고수[i] }} </span>
