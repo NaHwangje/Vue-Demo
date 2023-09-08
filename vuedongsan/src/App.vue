@@ -1,5 +1,13 @@
 <template>
   <div>
+    <div class="black-bg">
+      <div class="white-bg">
+        <h4>
+          상세 페이지
+        </h4>
+        <p>상세 페이지 내용임</p>
+      </div>
+    </div>
     <div class="menu">
       <a v-for="a in menu" :key="a"> {{ a }} </a>
     </div>
@@ -8,8 +16,8 @@
       <img :src="imageUrls[i]" class="room-img" />
       <h4>{{ products[i] }}</h4>
       <p>{{ price[i] }} 만원</p>
-      <button @click="신고수++">허위매물 신고</button>
-      <span>신고 수 : {{ 신고수 }} </span>
+      <button @click="신고수[i]++">허위매물 신고</button>
+      <span>신고 수 : {{ 신고수[i] }} </span>
       <!-- @ == v-on -->
     </div>
   </div>
@@ -20,7 +28,8 @@ export default {
   name: "App",
   data() {
     return {
-      신고수: 0,
+      모달창열렸니 : true,
+      신고수: [0,0,0],
       price: [60, 80, 90],
       products: ["상대동원룸", "하대동원룸", "상평동원룸"],
       menu: ["Home", "Shop", "About"],
@@ -62,6 +71,22 @@ export default {
 </script>
 
 <style>
+body{
+  margin: 0;
+}
+div{
+  box-sizing: border-box;
+}
+.black-bg{
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  position: fixed; padding: 20px;
+}
+.white-bg{
+  width: 100%; background: white;
+border-radius: 8px;  
+padding: 20px;
+}
 .room-img {
   width: 100%;
   margin-top: 40px;
