@@ -15,8 +15,8 @@ function plus(){
 
 <template>
   <div class="flex">
-    <button @click="minus"></button>
-    <div class="border p-2 m-2">{{ data.number }}</div>
-    <button @click="plus"></button>
+    <button @click="minus" class="bg-red-800 text-3xl" >-</button>
+    <div class="border p-2 m-2 text-4xl w-32">{{ data.number }}</div>
+    <button @click="plus" class="bg-blue-800 text-3xl">+</button>
   </div>
 </template>
