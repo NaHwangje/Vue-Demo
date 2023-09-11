@@ -2,18 +2,21 @@
 import { reactive } from 'vue';
 
 const data = reactive({
- number: 0
+  number: 0
 })
 
-function increment(){
+function minus(){
+  data.number--
+}
+function plus(){
   data.number++
 }
 </script>
 
 <template>
-  <div>
-<div>{{ data.number }}</div>
-<div>{{ b }}</div>
-<button @click="increment">증가</button>
+  <div class="flex">
+    <button @click="minus"></button>
+    <div class="border p-2 m-2">{{ data.number }}</div>
+    <button @click="plus"></button>
   </div>
-</template> 
+</template>
