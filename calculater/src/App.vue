@@ -5,6 +5,7 @@ const data = reactive({
   number: 0,
   temp: 0,
   operator: null,
+  log: "",
 });
 
 function inputNumber(number) {
@@ -24,7 +25,7 @@ const displayed = computed(() => {
   if (data.operator) text += data.operator;
   if (data.number) text += data.number;
   if (!text) text = 0;
-  return text;
+  return text ;
 });
 
 function calculate() {
@@ -51,16 +52,27 @@ function getKey(event) {
     reset();
   }
 }
+function log(temp) {
+  if (temp) {
+    if (data.log === null) {
+      data.log = temp;
+    } else {
+      data.log += " " + data.operator + " " + temp;
+    } 
+  } else{
+    data.log = null
+  }
+}
 
 document.addEventListener("keyup", getKey);
 </script>
 
 <template>
-  <div class="grid grid-cols-2">
-    <div class="grid grid-cols-4 gap-4">
-      <div class="col-span-4 texxt-center text-2xl font-bold">계산기</div>
+  <div>
+    <div class="grid grid-cols-6 gap-4">
+      <div class="col-span-5 texxt-center text-2xl font-bold">계산기</div>
       <div
-        class="col-span-4 border p-4 text-right rounded-lg bg-white text-black"
+        class="col-span-6 border p-4 text-right rounded-lg bg-white text-black"
       >
         {{ displayed }}
       </div>
@@ -83,9 +95,12 @@ document.addEventListener("keyup", getKey);
           {{ o }}
         </button>
       </div>
-    </div>
-    <div>
-      
+
+      <div
+        class="col-span-2 grid border p-4 text-right rounded-lg bg-white text-black "
+      >
+        {{ data.log }}
+      </div>
     </div>
   </div>
 </template>
