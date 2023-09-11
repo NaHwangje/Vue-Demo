@@ -1,22 +1,32 @@
 <script setup>
-import { reactive } from 'vue';
+import { reactive } from "vue";
 
 const data = reactive({
-  number: 0
-})
+  number: 0,
+});
 
-function minus(){
-  data.number--
-}
-function plus(){
-  data.number++
+function inputNumber(number) {
+  data.number = number;
 }
 </script>
 
 <template>
-  <div class="flex">
-    <button @click="minus" class="bg-red-800 text-3xl" >-</button>
-    <div class="border p-2 m-2 text-4xl w-32">{{ data.number }}</div>
-    <button @click="plus" class="bg-blue-800 text-3xl">+</button>
+  <div class="grid grid-cols-4 gap-4">
+    <div
+      class="col-span-4 border p-4 text-right rounded-lg bg-white text-black"
+    >
+      display
+    </div>
+    <div class="grid grid-cols-3 gap-4 col-span-3">
+      <button v-for="n of 9">{{ n }}</button>
+      <button>0</button>
+      <button class="col-span-2">=</button>
+    </div>
+    <div class="grid col-span-1 gap-4">
+      <button>+</button>
+      <button>-</button>
+      <button>*</button>
+      <button>/</button>
+    </div>
   </div>
 </template>
