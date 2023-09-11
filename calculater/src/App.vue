@@ -1,14 +1,19 @@
 <script setup>
-function action(){
-  let a = document.querySelector('#i1').value
-  alert(a)
+import { reactive } from 'vue';
+
+const data = reactive({
+ number: 0
+})
+
+function increment(){
+  data.number++
 }
 </script>
 
 <template>
   <div>
-    <input id="i1" class="m-2" type="text">
-    <input type="text">
-    <button @click="action">버튼</button>
+<div>{{ data.number }}</div>
+<div>{{ b }}</div>
+<button @click="increment">증가</button>
   </div>
 </template> 
