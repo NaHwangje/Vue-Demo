@@ -1,12 +1,15 @@
 <template>
   <div>
-    <!-- <div class="black-bg" v-if="모달창열렸니 == true">
-      <div class="white-bg" v-for="(n,i) in onerooms ":key="n">
-        <h4>{{ onerooms[1] }}</h4>
+    <div class="black-bg" v-if="modal == true">
+      <div class="white-bg" v-for="(n, i) in onerooms" :key="i">
+        <h4>{{ onerooms[clicked].title }}</h4>
         <p>상세 페이지 내용임</p>
         <button @click="모달창열렸니 = false">x</button>
       </div>
-    </div> -->
+    </div>
+    
+
+
     <div class="menu">
       <a v-for="a in menu" :key="a"> {{ a }} </a>
     </div>
@@ -14,7 +17,14 @@
     <div v-for="(n, i) in onerooms" :key="i">
       <img :src="n.image" class="room-img" />
 
-      <h4>{{ n.title }}</h4>
+      <h4
+        @click="
+          modal == true;
+          clicked = i;
+        "
+      >
+        {{ n.title }}
+      </h4>
 
       <p>{{ n.price }} 만원</p>
     </div>
@@ -29,8 +39,9 @@ export default {
   name: "App",
   data() {
     return {
+      clicked: 0,
       onerooms: oneroomsdata,
-      모달창열렸니: false,
+      modal: false,
       menu: ["Home", "Shop", "About"],
     };
   },
