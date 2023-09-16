@@ -1,25 +1,19 @@
 <template>
   <div>
-    <div class="black-bg" v-if="modal == true">
-      <div class="white-bg" v-for="(n, i) in onerooms" :key="i">
-        <h4>{{ onerooms[clicked].title }}</h4>
-        <p>상세 페이지 내용임</p>
-        <button @click="모달창열렸니 = false">x</button>
-      </div>
-    </div>
-    
-
+    <Modal/>
 
     <div class="menu">
       <a v-for="a in menu" :key="a"> {{ a }} </a>
     </div>
+
+    <Discount/>
 
     <div v-for="(n, i) in onerooms" :key="i">
       <img :src="n.image" class="room-img" />
 
       <h4
         @click="
-          modal == true;
+          modal = true;
           clicked = i;
         "
       >
@@ -34,9 +28,12 @@
 
 <script>
 import oneroomsdata from "./assets/oneroom";
+import Discount from "./Discount.vue";
+import Modal from "./Modal.vue";
 
 export default {
   name: "App",
+
   data() {
     return {
       clicked: 0,
@@ -47,7 +44,10 @@ export default {
   },
   created() {},
   methods: {},
-  components: {},
+  components: {
+    Discount,
+    Modal
+  },
 };
 </script>
 
@@ -57,6 +57,13 @@ body {
 }
 div {
   box-sizing: border-box;
+}
+
+.discount {
+  background: #eee;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
 }
 .black-bg {
   width: 100%;
