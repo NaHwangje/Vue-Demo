@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Modal/>
+    <Modal :clicked="clicked" :onerooms="onerooms" :modal="modal"/>
 
     <div class="menu">
       <a v-for="a in menu" :key="a"> {{ a }} </a>
