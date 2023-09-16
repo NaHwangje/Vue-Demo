@@ -12,7 +12,7 @@ fetch("https://www.themealdb.com/api/json/v1/1/random.php")
       if (data[`strIngredient${i}`]) {
         let ingredient = {
           name: data[`strIngredient${i}`],
-          measure: data[`strMeasure${i}`],
+            measure: data[`strMeasure${i}`],
         };
         data.ingredients.push(ingredient);
       } else break;

@@ -11,26 +11,25 @@
       <a v-for="a in menu" :key="a"> {{ a }} </a>
     </div>
 
-    <div v-for="(n,i) in onerooms " :key="n">
-      <img :src="onerooms[i].image" class="room-img" />
+    <div v-for="(n, i) in onerooms" :key="i">
+      <img :src="n.image" class="room-img" />
 
-      <h4 @click="모달창열렸니 = true">{{ onerooms[i].title }}</h4>
+      <h4>{{ n.title }}</h4>
 
-      <p>{{ onerooms[i].price }} 만원</p>
-      
+      <p>{{ n.price }} 만원</p>
     </div>
   </div>
 </template>
 
 
 <script>
-import oneroomsdata from './assets/oneroom'
+import oneroomsdata from "./assets/oneroom";
 
 export default {
   name: "App",
   data() {
     return {
-     onerooms: oneroomsdata,
+      onerooms: oneroomsdata,
       모달창열렸니: false,
       menu: ["Home", "Shop", "About"],
     };
