@@ -8,20 +8,7 @@
 
     <Discount/>
 
-    <div v-for="(n, i) in onerooms" :key="i">
-      <img :src="n.image" class="room-img" />
-
-      <h4
-        @click="
-          modal = true;
-          clicked = i;
-        "
-      >
-        {{ n.title }}
-      </h4>
-
-      <p>{{ n.price }} 만원</p>
-    </div>
+    <OneRoomList :onerooms="onerooms"/>
   </div>
 </template>
 
@@ -30,6 +17,7 @@
 import oneroomsdata from "./assets/oneroom";
 import Discount from "./Discount.vue";
 import Modal from "./Modal.vue";
+import OneRoomList from "./OneRoomList.vue";
 
 export default {
   name: "App",
@@ -46,7 +34,8 @@ export default {
   methods: {},
   components: {
     Discount,
-    Modal
+    Modal,
+    OneRoomList
   },
 };
 </script>
