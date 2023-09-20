@@ -20,7 +20,9 @@
 <script>
 export default {
   name: "OneRoomList",
-  props: onerooms,
+  props: {
+    onerooms: Array
+  },
 };
 </script>
 
